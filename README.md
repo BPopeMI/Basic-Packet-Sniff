@@ -16,12 +16,14 @@ winpcap https://www.winpcap.org/install/
 
 
 #Todo:
-Improve filter
-Allow custom search/capture of specific traffic
 Constant write (threading?)
+Implement capture choices before capture
+Limit duplicate captures - to optimize?
 More OS options than windows
+Show total captures
 
 #Completed
 Color Key & Color Cordination
 Output to HTML file
-Filter
+Improve filter
+Allow custom search/capture of specific traffic
