@@ -8,13 +8,15 @@ colors = {
     "ARP": "red",
     "IPv6": "blue"
 }
+#Set title and message
+system('title "Packet Capture - 1 rev A."')
+print("Capturing traffic: Active\nClose this console at anytime to end capture, you can view the completed file on your desktop - 'output.html'")
 
 # Create an HTML file to store the output
 desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
 file_path = os.path.join(desktop, "output.html")
 with open(file_path, "w") as file:
 # Formatting the HTML Document
-# Javascript for the filter ability
     file.write("<html>\n<head>\n")
     file.write("<style>\n")
     file.write("table, th, td {\n")
@@ -26,34 +28,35 @@ with open(file_path, "w") as file:
     file.write("background-color: lightgray;\n")
     file.write("}\n")
     file.write("</style>\n")
+    # Javascript for the filter ability
     file.write("<script>\n")
     file.write("function filterTable() {\n")
-    file.write("    // Declare variables\n")
-    file.write("    var input, filter, table, tr, td, i, txtValue;\n")
-    file.write("    input = document.getElementById('filterInput');\n")
-    file.write("    filter = input.value.toUpperCase();\n")
-    file.write("    table = document.getElementById('table');\n")
-    file.write("    tr = table.getElementsByTagName('tr');\n")
-    file.write("    \n")
-    file.write("    // Loop through all table rows, and hide those who don't match the search query\n")
+    file.write("    var filter = document.getElementById('filterInput').value.toUpperCase();\n")
+    file.write("    var table = document.getElementById('table');\n")
+    file.write("    var tr = table.getElementsByTagName('tr');\n")
     file.write("    for (i = 0; i < tr.length; i++) {\n")
-    file.write("        td = tr[i].getElementsByTagName('td')[2];\n")
-    file.write("        if (td) {\n")
-    file.write("            txtValue = td.textContent || td.innerText;\n")
-    file.write("            if (txtValue.toUpperCase().indexOf(filter) > -1) {\n")
-    file.write(" tr[i].style.display = '';\n")
-    file.write(" } else {\n")
-    file.write(" tr[i].style.display = 'none';\n")
-    file.write(" }\n")
-    file.write(" }\n")
-    file.write(" }\n")
-    file.write("}\n")
-    file.write("</script>\n")
-    file.write("</head>\n<body>\n")
-    file.write("<p>Key: <span style='color: green'>IPv4</span>, <span style='color: red'>ARP</span>, <span style='color: blue'>IPv6</span></p>")
-    file.write("<input type='text' id='filterInput' onkeyup='filterTable()' placeholder='Search for IP address...'>")
-    file.write("<table id='table'>\n")
-    file.write("<tr><th>Timestamp</th><th>Source MAC</th><th>Source IP</th> <th>Destination MAC</th><th>Destination IP</th><th>Protocol</th></tr>\n")
+    file.write("        var td1 = tr[i].getElementsByTagName('td')[1];\n")
+    file.write("        var td4 = tr[i].getElementsByTagName('td')[4];\n")
+    file.write("        var td6 = tr[i].getElementsByTagName('td')[6];\n")
+    file.write("        var th = tr[i].getElementsByTagName('th')[0];\n")
+    file.write("        if (th) {\n")
+    file.write("            var txtValueTh = th.textContent || th.innerText;\n")
+    file.write("            if (txtValueTh.toUpperCase().indexOf(filter) > -1) {\n")
+    file.write("                tr[i].style.display = 'table-row';\n")
+    file.write("                continue;\n")
+    file.write("            }\n")
+    file.write("        }\n")
+    file.write("        if (td1) {\n")
+    file.write("            var txtValue1 = td1.textContent || td1.innerText;\n")
+    file.write("            if (txtValue1.toUpperCase().indexOf(filter) > -1) {\n")
+    file.write("                tr[i].style.display = '';\n")
+    file.write("                continue;\n")
+    file.write("            }\n")
+    file.write("        }\n")
+    file.write("        if (td4) {\n")
+    file.write("            var txtValue4 = td4.textContent || td4.innerText;\n")
+    file.write("            if (txtValue4.toUpperCase().indexOf(filter) > -1) {\n")
+
 #Defining Network Traffic Packets
     def packet_info(packet):
         src_mac = packet[Ether].src
