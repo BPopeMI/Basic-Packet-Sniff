@@ -18,10 +18,12 @@ desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
 file_path = os.path.join(desktop, "output.html")
 with open(file_path, "w") as file:
 # Formatting the HTML Document
-    file.write("<html>\n<head>\n<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>\n")
+    file.write("<html>\n<head>\n<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>\n") # Adds jquery to page
     file.write("<p><b>Key: Protocols are color coded: <span style='color: green'>IPv4 </span><span style='color: red'>ARP </span><span style='color: blue'>IPv6 </span></b></p>")
-
     file.write("<script>\n")
+    #Add search function to table - Using document ready function. This allows DOM to be fully loaded and manipulated. 
+    #Adds listenerr to the table id and listens for a keyup event. This event is triggered whena user released a keyboard within the search/input element of the table.
+    # #data tr is the filtered with a function to filter through the rows of the table with the taba ids, this allos for toggling search terms in existing rows and displaying them or not.
     file.write("$(document).ready(function() {\n")
     file.write("$('#table').on('keyup', function() {\n")
     file.write("var search = $(this).val().toLowerCase();\n")
@@ -36,6 +38,7 @@ with open(file_path, "w") as file:
     file.write("<input type='text' id='table' placeholder='Search..'>\n")
     file.write("<table border='1' id='data'>\n")
     file.write("<tr>\n")
+    # Adding headers to the table
     file.write("<th>Timestamp</th>\n")
     file.write("<th>Source MAC</th>\n")
     file.write("<th>Source IP</th>\n")
