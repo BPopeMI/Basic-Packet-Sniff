@@ -16,11 +16,11 @@ winpcap https://www.winpcap.org/install/
 
 
 #Todo:
-Constant write (threading?)
-Implement capture choices before capture
-Limit duplicate captures - to optimize?
-More OS options than windows
-Show total captures
+-Constant write (threading?)
+-Implement capture choices before capture
+-Limit duplicate captures - to optimize?
+-More OS options than windows
+-Show total captures
 
 #Completed
 Color Key & Color Cordination
