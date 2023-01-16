@@ -9,9 +9,6 @@ HTML(output and table)
 JavaScript(filter ability)
 
 
-#Repo
-Only 1 Main - Releases are probably behind the source code in development/release
-
 #Library:
 Scapy
 
