@@ -8,6 +8,9 @@ colors = {
     "ARP": "red",
     "IPv6": "blue"
 }
+#Set title and message
+system('title "Packet Capture - 1 rev A."')
+print("Capturing traffic: Active\nClose this console at anytime to end capture, you can view the completed file on your desktop - 'output.html'")
 
 # Create an HTML file to store the output
 desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
