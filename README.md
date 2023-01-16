@@ -9,6 +9,10 @@ HTML
 JavaScript
 
 
+#Repo
+1. Main working code(unless I mess up and commit to the wrong repo)
+2. In progress code that probably doens't function right.
+
 #Library:
 Scapy
 
