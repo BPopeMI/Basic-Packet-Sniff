@@ -12,7 +12,7 @@ JavaScript(filter ability)
 #Library:
 Scapy
 Pycap
-winpcapy
+winpcap https://www.winpcap.org/install/
 
 
 #Todo:
