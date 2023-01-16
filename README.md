@@ -10,8 +10,7 @@ JavaScript(filter ability)
 
 
 #Repo
-1. Main working code(unless I mess up and commit to the wrong repo)
-2. In progress code that probably doens't function right.
+Only 1 Main - Releases are probably behind the source code in development/release
 
 #Library:
 Scapy
