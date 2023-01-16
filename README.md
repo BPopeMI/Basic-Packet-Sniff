@@ -3,10 +3,10 @@ Tool simply analyzes network traffic - collects and oraganizes it into a table l
 Currently only works on windows.
 
 
-#Language
-Python
-HTML
-JavaScript
+#Languages
+Python(main)
+HTML(output and table)
+JavaScript(filter ability)
 
 
 #Repo
