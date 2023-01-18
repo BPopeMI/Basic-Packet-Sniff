@@ -1,0 +1,67 @@
+<form>
+  <label>Search:</label>
+  <input type="text" id="search-input" oninput="filterPackets()">
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Source IP</th>
+      <th>Source MAC</th>
+      <th>Source Port</th>
+      <th>Destination IP</th>
+      <th>Destination MAC</th>
+      <th>Destination Port</th>
+      <th>Protocol</th>
+    </tr>
+  </thead>
+  <tbody id="packet-table">
+    <% packets.forEach(function(packet) { %>
+      <tr>
+        <td><%= packet.timestamp %></td>
+        <td><%= packet.src_ip %></td>
+        <td><%= packet.src_mac %></td>
+        <td><%= packet.src_port %></td>
+        <td><%= packet.dst_ip %></td>
+        <td><%= packet.dst_mac %></td>
+        <td><%= packet.dst_port %></td>
+        <td><%= packet.protocol %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<script>
+  function filterPackets() {
+    // Get the search input value
+    let searchInput = document.getElementById("search-input").value.toLowerCase();
+
+    // Get the rows of the packet table
+    let rows = document.getElementById("packet-table").getElementsByTagName("tr");
+
+    // Loop through all rows
+    for (let i = 0; i < rows.length; i++) {
+      let showRow = false;
+
+      // Get the cells of the current row
+      let cells = rows[i].getElementsByTagName("td");
+
+      // Loop through all cells
+      for (let j = 0; j < cells.length; j++) {
+        // Check if the cell's text content contains the search input
+        if (cells[j].textContent.toLowerCase().indexOf(searchInput) > -1) {
+          showRow = true;
+          break;
+        }
+      }
+
+      // Show or hide the current row based on the search input
+      if (showRow) {
+        rows[i].style.display = "";
+      } else {
+        rows[i].style.display = "none";
+      }
+    }
+  }
+</script>
