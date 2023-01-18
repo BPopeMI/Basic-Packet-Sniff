@@ -2,6 +2,7 @@
 Tool simply analyzes network traffic -
 1. Packets.py collects and oraganizes it into a table located in "output.html" on your desktop.
 2. SqlPacket.py writes to SQL document that you can then use a Node.JS web interface to view and filter
+-Currently local hosted, Will be server hosted to optimize fitler feed back.
 
 #Languages
 Python(main)
