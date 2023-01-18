@@ -1,12 +1,16 @@
-# Packet-Sniff
+# Packet-Sniff - 2 Versions
 Tool simply analyzes network traffic - collects and oraganizes it into a table located in "output.html" on your desktop.
 Currently only works on windows.
 
+One Version writes to a html document - Laggy not recommended
+Other Version writes to SQL document that you can then use a Node.JS web interface to view and filter
 
 #Languages
 Python(main)
 HTML(output and table)
 JavaScript(filter ability)
+SQL
+Node.JS
 
 
 #Library:
