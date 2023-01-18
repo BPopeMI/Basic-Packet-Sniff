@@ -17,6 +17,9 @@ Scapy
 Pycap
 sqllite
 sqlite3
+ejs
+enterprise
+verbose
 winpcap https://www.winpcap.org/install/
 
 
