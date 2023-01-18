@@ -15,6 +15,7 @@ Node.JS
 Scapy
 Pycap
 sqllite
+sqlite3
 winpcap https://www.winpcap.org/install/
 
 
