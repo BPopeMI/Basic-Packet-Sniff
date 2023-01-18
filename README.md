@@ -2,7 +2,7 @@
 
 #1. Packets.py collects and oraganizes it into a table located in "output.html" on your desktop. -Laggy when filtering
 
-#2. SqlPacket.py writes to SQL document that you can then use a Node.JS web interface to view and filter. Currently local hosted, Will be server hosted to optimize fitler feed back. Or simply use a free lite SQL reader - does not lag
+#2. SqlPacket.py writes to SQL database. Use any SQLite viewer to access database content.  Or you can then use a Node.JS script and a web interface to view and filter - Note this converts it back into html table so fitlering is just as laggy as version one. Will also need to install included librarys and node. 
 
 #Languages
 Python(main)
@@ -29,6 +29,7 @@ winpcap https://www.winpcap.org/install/
 -Limit duplicate captures - to optimize?
 -More OS options than windows
 -Show total captures
+-Implement Server Side Filtering for SQL - R730 hosted
 
 #Completed
 Color Key & Color Cordination
