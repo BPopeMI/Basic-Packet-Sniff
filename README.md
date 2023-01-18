@@ -1,14 +1,12 @@
 # Packet-Sniff - 2 Versions
-Tool simply analyzes network traffic - collects and oraganizes it into a table located in "output.html" on your desktop.
-Currently only works on windows.
-
-One Version writes to a html document - Laggy not recommended
-Other Version writes to SQL document that you can then use a Node.JS web interface to view and filter
+Tool simply analyzes network traffic -
+1. Packets.py collects and oraganizes it into a table located in "output.html" on your desktop.
+2. SqlPacket.py writes to SQL document that you can then use a Node.JS web interface to view and filter
 
 #Languages
 Python(main)
-HTML(output and table)
-JavaScript(filter ability)
+HTML
+JavaScript
 SQL
 Node.JS
 
@@ -16,6 +14,7 @@ Node.JS
 #Library:
 Scapy
 Pycap
+sqllite
 winpcap https://www.winpcap.org/install/
 
 
